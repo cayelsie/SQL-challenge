@@ -7,7 +7,8 @@ salaries.emp_no = employees.emp_no;
 --Query for first name, last name and hire date for employees hired in 1986
 SELECT first_name, last_name, hire_date
 FROM employees
-WHERE right (hire_date,4) = '1986';
+WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
+
 
 --Query for manager of each department - department number, department name, manager's employee number, last name, first name
 --Need joins of dept_manager, employees, and departments tables
@@ -59,8 +60,3 @@ SELECT last_name, COUNT(last_name) AS "num_employees"
 FROM employees
 GROUP BY last_name
 ORDER BY "num_employees" DESC;
-	  
-
-	  
-
-
